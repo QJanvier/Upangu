@@ -17,3 +17,4 @@ import { BlogPost } from '../../models/post';
 export default class BlogPostPage {
   post$ = injectContent<BlogPost>();
 }
+//MarkdownComponent is not working, trying to define the error
