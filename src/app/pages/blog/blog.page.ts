@@ -3,11 +3,8 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [RouterOutlet],
-  template: `
-    <h1>My Blog</h1>
-
-    <router-outlet />
-  `,
+  imports: [],
+  templateUrl: './blog.page.html',
+  styleUrls: ['./blog.page.scss'],
 })
 export default class BlogPage {}
