@@ -9,12 +9,11 @@ import { BlogPost } from '../../models/post';
   imports: [MarkdownComponent, NgIf, AsyncPipe],
   template: `
     <div *ngIf="post$ | async as post">
-      <h2>{{ post.title }}</h2>
-      <markdown [content]="post.content"></markdown>
+      <h2>{{ post.attributes.title }}</h2>
+      <analog-markdown [content]="post.content"></analog-markdown>
     </div>
   `,
 })
 export default class BlogPostPage {
   post$ = injectContent<BlogPost>();
 }
-//MarkdownComponent is not working, trying to define the error
