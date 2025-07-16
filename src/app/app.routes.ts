@@ -4,7 +4,7 @@ export const routes: Routes = [
     {
         path: '',
         loadComponent: () => import('./pages/blog/blog.page').then(m => m.default),
-        title: 'Blog',
+        title: 'Upangu',
     },
     {
         path: 'blog/:slug',
