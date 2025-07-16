@@ -10,6 +10,6 @@ import { BlogPost } from '../../models/post';
   templateUrl: `./[slug].page.html`,
   styleUrls: ['./[slug].page.scss'],
 })
-export default class BlogPostPage {
+export class BlogPostPage {
   post$ = injectContent<BlogPost>();
 }

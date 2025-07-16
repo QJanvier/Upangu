@@ -6,4 +6,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './blog.page.html',
   styleUrls: ['./blog.page.scss'],
 })
-export default class BlogPage {}
+export  class BlogPage {}
