@@ -5,5 +5,6 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   templateUrl: './blog.page.html',
   styleUrls: ['./blog.page.scss'],
+  selector: 'app-blog-page'
 })
 export  class BlogPage {}
