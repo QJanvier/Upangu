@@ -8,7 +8,7 @@ import { BlogPost } from '../../models/post';
   standalone: true,
   imports: [MarkdownComponent, NgIf, AsyncPipe],
   templateUrl: `./[slug].page.html`,
-  styleUrls: ['./[slug].page.scss'],
+  styleUrl: './[slug].page.scss',
 })
 export class BlogPostPage {
   post$ = injectContent<BlogPost>();

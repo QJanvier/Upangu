@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './blog.page.html',
-  styleUrls: ['./blog.page.scss'],
+  styleUrl: './blog.page.scss',
   selector: 'app-blog-page'
 })
 export  class BlogPage {}
