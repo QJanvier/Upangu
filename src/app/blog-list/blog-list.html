@@ -1,6 +1,6 @@
-<p>blog-list works!</p>
-<ul>
-    <li *ngFor="let post of posts">
-        <a [routerLink]="['/blog', post.slug]">{{ post.title }}</a>
-    </li>
-</ul>
+<div class="blog-list">
+    <div *ngFor="let post of posts" class="blog-post">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+    </div>
+</div>

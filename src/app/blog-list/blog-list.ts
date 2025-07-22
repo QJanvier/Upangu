@@ -1,16 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { BlogPost } from '../models/post';
 
 @Component({
   selector: 'app-blog-list',
-  imports: [RouterLink, CommonModule],
+  imports: [CommonModule],
   templateUrl: './blog-list.html',
   styleUrl: './blog-list.scss'
 })
 export class BlogList {
-  posts = [
-    { title: 'First Post', slug: 'first-post' },
-    { title: 'Second Post', slug: 'second-post' }
-  ];
+  @Input() posts: BlogPost[] = [];
+  ;
 }
