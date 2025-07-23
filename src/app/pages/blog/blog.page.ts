@@ -10,13 +10,13 @@ import { BlogPost } from '../../models/post';
   styleUrl: './blog.page.scss',
   selector: 'app-blog-page'
 })
-export  class BlogPage {
-  post = [
-    { title: 'First Post', content: 'This is the content of the first post.' },
-    { title: 'Second Post', content: 'This is the content of the second post.' },
-    { title: 'Third Post', content: 'This is the content of the third post.' }
+export class BlogPage {
+  posts: BlogPost[] = [
+    { title: 'First Post', slug: 'first-post', content: 'This is the content of the first post.' },
+    { title: 'Second Post', slug: 'second-post', content: 'This is the content of the second post.' },
+    { title: 'Third Post', slug: 'third-post', content: 'This is the content of the third post.' }
   ];
   addPost(post: BlogPost) {
-    this.post.push(post);
+    this.posts.push(post);
   }
 }
