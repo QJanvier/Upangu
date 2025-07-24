@@ -1,9 +1,10 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { BlogPost } from '../models/post';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-blog-form',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './blog-form.html',
   styleUrl: './blog-form.scss'
 })
