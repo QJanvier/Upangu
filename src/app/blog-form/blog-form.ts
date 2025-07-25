@@ -9,11 +9,23 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './blog-form.scss'
 })
 export class BlogForm {
-  title: string = '';
+  _title: string = '';
   content: string = '';
   slug: string = "";
 
   @Output() newPost = new EventEmitter<BlogPost>();
+
+  get title() {
+    return this.title;
+  }
+  set title(value: string) {
+    this._title = value;
+    this.slug = value
+      .toLowerCase()
+      .replace(/ /g, '-')//replace spaces with hyphens
+      .replace(/[^\w-]+/g, '') //remove non-word characters except hyphens
+      .replace(/[^\w-]+/g, '');
+  }
 
   submitPost() {
     if (this.title && this.content) {
