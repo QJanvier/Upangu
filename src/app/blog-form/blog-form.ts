@@ -27,11 +27,18 @@ export class BlogForm {
       .replace(/[^\w-]+/g, '');
   }
 
+  resetForm() {
+    this.title = '';
+    this.content = '';
+    this.slug = '';
+  }
+  
   submitPost() {
     if (this.title && this.content) {
       this.newPost.emit({ title: this.title, slug: this.slug ,content: this.content });
       this.title = '';
       this.content = '';
+      this.resetForm();
   }
 }
 }
