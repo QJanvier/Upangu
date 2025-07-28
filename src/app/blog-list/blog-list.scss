@@ -1,0 +1,37 @@
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 32px 0;
+
+  .blog-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(10, 1, 39, 0.08);
+    padding: 24px;
+    min-width: 260px;
+    max-width: 340px;
+    flex: 1 1 260px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    color: #0a0127;
+
+    &:hover {
+      box-shadow: 0 6px 24px rgba(10, 1, 39, 0.16);
+      transform: translateY(-4px) scale(1.02);
+      background: #f5f6fa;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: #2d2d6e;
+    }
+
+    p {
+      color: #444;
+      margin-bottom: 0;
+    }
+  }
+}
