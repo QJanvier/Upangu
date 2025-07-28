@@ -16,7 +16,7 @@ export class BlogForm {
   @Output() newPost = new EventEmitter<BlogPost>();
 
   get title() {
-    return this.title;
+    return this._title;
   }
   set title(value: string) {
     this._title = value;
@@ -30,14 +30,11 @@ export class BlogForm {
   resetForm() {
     this.title = '';
     this.content = '';
-    this.slug = '';
   }
   
   submitPost() {
     if (this.title && this.content) {
       this.newPost.emit({ title: this.title, slug: this.slug ,content: this.content });
-      this.title = '';
-      this.content = '';
       this.resetForm();
   }
 }
