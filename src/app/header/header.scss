@@ -3,18 +3,21 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #0a0127 60%, #2d2d6e 100%);
+  background: linear-gradient(135deg, #7b2ff2 0%, #1a0036 100%);
+  color: #ffffff;
   padding: 16px 32px;
-  border-bottom: 1px solid #dee2e6;
-  box-shadow: 0 2px 8px rgba(10, 1, 39, 0.05);
+  box-shadow: 0 2px 12px rgba(123, 47, 242, 0.12);
+  border-bottom: none;
+
   h1 {
-    font-size: 24px;
     color: #ffffff;
+    text-shadow: 0 1px 2px #1a0036;
     margin: 0;
+    font-size: 24px;
     transition: color 0.3s;
 
     &:hover {
-      color: #113fe6;
+      color: #b39ddb;
       cursor: pointer;
     }
   }
@@ -24,42 +27,42 @@ header {
     color: #ffffff;
     margin: 0;
   }
-    nav {
-        display: flex;
-        gap: 16px;
-    
-        a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 16px;
-        transition: color 0.3s;
-    
-        &:hover {
-            color: #1566d0;
-            cursor: pointer;
-        }
-        }
-    }
-}
 
-@media (max-width: 768px) {
-  header {
+  nav {
+    display: flex;
+    gap: 16px;
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #b39ddb;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
     padding: 16px;
-    
-    h1 {
+
+    h1,
+    .header-title {
       font-size: 20px;
     }
-    
+
     p {
       font-size: 14px;
     }
-    
+
     nav {
       flex-direction: column;
       gap: 8px;
-      
+
       a {
         font-size: 14px;
       }

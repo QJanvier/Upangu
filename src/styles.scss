@@ -1,10 +1,68 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(90deg, #2d2d6e 60%, #0a0127 100%);
+    background: linear-gradient(135deg, #7b2ff2 0%, #1a0036 100%);
     border: none;
     box-sizing: border-box;
     color: #ffffff;
-    }
+}
 
-    
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #e0cfff;
+}
+
+a {
+    color: #b39ddb;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #e0cfff;
+    text-shadow: 0 1px 2px #1a0036;
+}
+
+input,
+textarea,
+select {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0cfff;
+    border: 1px solid #7b2ff2;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #e0cfff;
+    background: rgba(123, 47, 242, 0.12);
+    outline: none;
+}
+
+button {
+    background: linear-gradient(90deg, #7b2ff2 0%, #1a0036 100%);
+    color: #e0cfff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(123, 47, 242, 0.15);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #1a0036 0%, #7b2ff2 100%);
+    color: #fff;
+}
