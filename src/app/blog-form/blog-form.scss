@@ -27,6 +27,7 @@
     background: rgba(255, 255, 255, 0.08);
     color: #e0cfff;
     transition: border 0.2s, background 0.2s;
+    box-sizing: border-box;
 
     &:focus {
       border-color: #e0cfff;
@@ -46,6 +47,8 @@
     transition: background 0.2s, color 0.2s;
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(123, 47, 242, 0.15);
+    width: 100%;
+    box-sizing: border-box;
 
     &:hover {
       background: linear-gradient(90deg, #1a0036 0%, #7b2ff2 100%);
