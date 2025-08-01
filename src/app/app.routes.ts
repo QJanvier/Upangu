@@ -6,7 +6,7 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/blog/blog.page').then(m => m.BlogPage),
         title: 'Upangu',
         children: [
-            
+
         ],
     },
     {
@@ -15,7 +15,7 @@ export const routes: Routes = [
         title: 'About Me',
     },
     {
-        path: ':slug',
+        path: 'blog/:slug',
         loadComponent: () => import('./pages/slug/[slug].page').then(m => m.BlogPostPage),
         title: 'Blog Post',
     },
