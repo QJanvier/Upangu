@@ -16,6 +16,7 @@ export class BlogPage {
     { title: 'Second Post', slug: 'second-post', content: 'This is the content of the second post.' },
     { title: 'Third Post', slug: 'third-post', content: 'This is the content of the third post.' }
   ];
+  //to be removed when using a real backend
   addPost(post: BlogPost) {
     this.posts.push(post);
   }
