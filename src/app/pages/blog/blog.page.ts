@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { BlogList } from "../../blog-list/blog-list";
 import { BlogForm } from "../../blog-form/blog-form";
 import { BlogPost } from '../../models/post';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Component({
   standalone: true,
   imports: [RouterOutlet, BlogList, BlogForm],
@@ -11,13 +13,20 @@ import { BlogPost } from '../../models/post';
   selector: 'app-blog-page'
 })
 export class BlogPage {
-  posts: BlogPost[] = [
-    { title: 'First Post', slug: 'first-post', content: 'This is the content of the first post.' },
-    { title: 'Second Post', slug: 'second-post', content: 'This is the content of the second post.' },
-    { title: 'Third Post', slug: 'third-post', content: 'This is the content of the third post.' }
-  ];
-  //to be removed when using a real backend
+  posts: BlogPost[] = [];
+  constructor(private http: HttpClient) {
+    this.loadPosts();
+  }
+
+  loadPosts() {
+    this.http.get<BlogPost[]>('/api/blog').subscribe(data => {
+      this.posts = data;
+    });
+  }
+
   addPost(post: BlogPost) {
-    this.posts.push(post);
+    this.http.post<BlogPost>('/api/blog', post).subscribe(newPost => {
+      this.posts.push(newPost);
+    });
   }
 }
