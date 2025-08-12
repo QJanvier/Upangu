@@ -17,13 +17,13 @@ export class BlogPage {
   constructor(private http: HttpClient) {
     this.loadPosts();
   }
-
+//method to load posts from the server
   loadPosts() {
     this.http.get<BlogPost[]>('/api/blog').subscribe(data => {
       this.posts = data;
     });
   }
-
+//method to add a new post
   addPost(post: BlogPost) {
     this.http.post<BlogPost>('/api/blog', post).subscribe(newPost => {
       this.posts.push(newPost);
