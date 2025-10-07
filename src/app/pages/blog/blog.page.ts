@@ -3,8 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { BlogList } from "../../blog-list/blog-list";
 import { BlogForm } from "../../blog-form/blog-form";
 import { BlogPost } from '../../models/post';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BlogService } from '../../services/blog-service';
 @Component({
   standalone: true,
   imports: [RouterOutlet, BlogList, BlogForm],
@@ -14,18 +13,19 @@ import { Observable } from 'rxjs';
 })
 export class BlogPage {
   posts: BlogPost[] = [];
-  constructor(private http: HttpClient) {
+
+  constructor(private blogService: BlogService) {
     this.loadPosts();
   }
 //method to load posts from the server
   loadPosts() {
-    this.http.get<BlogPost[]>('/api/blog').subscribe(data => {
+    this.blogService.getPosts().subscribe(data => {
       this.posts = data;
     });
   }
 //method to add a new post
   addPost(post: BlogPost) {
-    this.http.post<BlogPost>('/api/blog', post).subscribe(newPost => {
+    this.blogService.createPost(post).subscribe(newPost => {
       this.posts.push(newPost);
     });
   }

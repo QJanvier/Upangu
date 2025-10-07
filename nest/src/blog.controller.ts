@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 
 interface BlogPost {
   title: string;
@@ -25,4 +25,9 @@ export class BlogController {
     posts.push(post);
     return post;
   }
+  //method to get a single post by slug
+  @Get(':slug')
+  findOne(@Param('slug') slug: string) {
+  return posts.find(post => post.slug === slug);
+}
 }
