@@ -1,10 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, NotFoundException } from '@nestjs/common';
 
-interface BlogPost {
+export interface BlogPost {
   title: string;
   slug: string;
   content: string;
+  description?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const posts: BlogPost[] = [
@@ -22,12 +25,17 @@ export class BlogController {
 
   @Post()
   create(@Body() post: BlogPost) {
-    posts.push(post);
-    return post;
+    const newPost = { ...post, createdAt: new Date(), updatedAt: new Date() };
+    posts.push(newPost);
+    return newPost;
   }
   //method to get a single post by slug
   @Get(':slug')
   findOne(@Param('slug') slug: string) {
-  return posts.find(post => post.slug === slug);
-}
+    const post = posts.find(post => post.slug === slug);
+    if (!post) {
+      throw new NotFoundException(`Blog post with slug ${slug} not found`);
+    }
+  return post;
+  }
 }
